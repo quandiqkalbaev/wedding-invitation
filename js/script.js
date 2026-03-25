@@ -43,6 +43,7 @@ try {
 
 	document.addEventListener('click', startMusic, { once: true });
 	document.addEventListener('touchstart', startMusic, { once: true });
+	document.addEventListener('touchmove', startMusic, { once: true });
 } catch (e) {}
 
 try {
