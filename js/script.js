@@ -1,5 +1,5 @@
 try {
-	 AOS.init();
+	AOS.init();
 	const TARGET = new Date('2026-03-29T18:00:00');
 
 	const pad = n => String(n).padStart(2, '0');
@@ -35,8 +35,10 @@ try {
 	const audio = document.getElementById('music-bg');
 
 	function startMusic() {
-		audio.muted = false;
-		audio.play();
+		if (window.innerWidth < 480) {
+			audio.muted = false;
+			audio.play();
+		}
 	}
 
 	document.addEventListener('click', startMusic, { once: true });
@@ -44,7 +46,7 @@ try {
 } catch (e) {}
 
 try {
-document.addEventListener('DOMContentLoaded', () => {
-  document.body.classList.add('loaded');
-});
+	document.addEventListener('DOMContentLoaded', () => {
+		document.body.classList.add('loaded');
+	});
 } catch (e) {}
