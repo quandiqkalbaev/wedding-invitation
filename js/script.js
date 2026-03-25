@@ -1,4 +1,5 @@
 try {
+	 AOS.init();
 	const TARGET = new Date('2026-03-29T18:00:00');
 
 	const pad = n => String(n).padStart(2, '0');
@@ -40,4 +41,10 @@ try {
 
 	document.addEventListener('click', startMusic, { once: true });
 	document.addEventListener('touchstart', startMusic, { once: true });
+} catch (e) {}
+
+try {
+document.addEventListener('DOMContentLoaded', () => {
+  document.body.classList.add('loaded');
+});
 } catch (e) {}
