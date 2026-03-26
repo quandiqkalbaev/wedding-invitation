@@ -33,11 +33,14 @@ try {
 
 try {
 	const audio = document.getElementById('music-bg');
+	let musicStarted = false;
 
 	function startMusic() {
+		if (musicStarted) return;
 		if (window.innerWidth < 480) {
 			audio.muted = false;
 			audio.play();
+			musicStarted = true;
 		}
 	}
 
